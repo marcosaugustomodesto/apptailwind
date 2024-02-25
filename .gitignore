@@ -5,6 +5,7 @@
 # Xcode
 #
 build/
+actions-runner/
 *.pbxuser
 !default.pbxuser
 *.mode1v3
