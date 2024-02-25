@@ -72,8 +72,6 @@ jobs:
         run: |
           cd android
           ./gradlew build
-      - name: Log Current Directory
-        run: pwd
       - name: Build Android JS Bundle
         run: |
           yarn run package-android
