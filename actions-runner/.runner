@@ -1,9 +1,0 @@
-﻿{
-  "agentId": 2,
-  "agentName": "runner-react",
-  "poolId": 1,
-  "poolName": "Default",
-  "serverUrl": "https://pipelinesghubeus24.actions.githubusercontent.com/p8KexQVVy33kwt102qDpTefhPS6jHpVckGLPu0j4YHwPCpuORg/",
-  "gitHubUrl": "https://github.com/marcosaugustomodesto/apptailwind",
-  "workFolder": "_work"
-}
