@@ -12,7 +12,7 @@ export default function App() {
     <View className="flex-1 items-center justify-center dark:bg-black light:white p-8 ">
             <ToggleTheme />
 
-            <Icon name="home" size={30} color={color.gray[300]} />
+            <Icon name="home" size={30} color={color.gray[500]} />
             <Text className='dark:text-gray-200 light:text-black text-xl font-bold'>Login</Text>
 
             <TextInput placeholder='Digite seu email' 
