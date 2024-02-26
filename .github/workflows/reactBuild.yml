@@ -75,7 +75,6 @@ jobs:
           ./gradlew build
       - name: Build Android JS Bundle
         run: |
-          cd /home/marcosmodesto/ambiente/react-native/apptailwind/android
           yarn run package-android
       - name: Delete Android build duplicate assets resource
         run: yarn run delete-pics

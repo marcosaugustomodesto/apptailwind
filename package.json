@@ -8,7 +8,7 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "package-android": "./gradlew assembleRelease"
+    "package-android": "cd /home/marcosmodesto/ambiente/react-native/apptailwind/android && ./gradlew assembleRelease"
   },
   "dependencies": {
     "nativewind": "^2.0.11",
