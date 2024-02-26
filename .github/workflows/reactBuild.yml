@@ -98,4 +98,4 @@ jobs:
       - name: Run fastlane
         run: |
           cd /home/marcosmodesto/ambiente/react-native/apptailwind/android
-          bundle exec fastlane build_qa
+          bundle exec fastlane build
