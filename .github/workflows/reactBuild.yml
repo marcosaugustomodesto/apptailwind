@@ -70,7 +70,7 @@ jobs:
         uses: gradle/gradle-build-action@v2
       - name: Execute Gradle build
         run: |
-          cd android
+          cd /home/marcosmodesto/ambiente/react-native/apptailwind/android
           ./gradlew build
       - name: Build Android JS Bundle
         run: |
