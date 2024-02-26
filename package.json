@@ -11,6 +11,9 @@
     "package-android": "cd /home/marcosmodesto/ambiente/react-native/apptailwind/android && ./gradlew assembleRelease"
   },
   "dependencies": {
+    "appcenter": "5.0.1",
+    "appcenter-analytics": "5.0.1",
+    "appcenter-crashes": "5.0.1",
     "nativewind": "^2.0.11",
     "react": "18.2.0",
     "react-native": "^0.73.4",
