@@ -76,8 +76,17 @@ jobs:
       - name: Build Android JS Bundle
         run: |
           yarn run package-android
-      - name: Delete Android build duplicate assets resource
-        run: yarn run delete-pics
+      # Adjust package.json the command (rm -rf ./pictures) according to your project's requirements.
+      #"scripts": {
+      #  "android": "react-native run-android",
+      #  "ios": "react-native run-ios",
+      #  "lint": "eslint .",
+      #  "start": "react-native start",
+      #  "test": "jest",
+      #  "delete-pics": "rm -rf ./pictures"
+      # }
+      #- name: Delete Android build duplicate assets resource
+      # run: yarn run delete-pics
       - name: Install bundler
         run: |
           cd /home/marcosmodesto/ambiente/react-native/apptailwind/android
