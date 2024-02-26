@@ -70,7 +70,7 @@ jobs:
         uses: gradle/gradle-build-action@v2
       - name: Execute Gradle build
         run: |
-          cd /home/marcosmodesto/ambiente/react-native/apptailwind/android
+          cd /home/marcosmodesto/ambiente/react-native/apptailwind/actions-runner/_work/apptailwind/apptailwind
           ./gradlew build
       - name: Build Android JS Bundle
         run: |
@@ -79,13 +79,13 @@ jobs:
         run: yarn run delete-pics
       - name: Install bundler
         run: |
-          cd android
+          cd /home/marcosmodesto/ambiente/react-native/apptailwind/actions-runner/_work/apptailwind/apptailwind
           gem install bundler
       - name: Install gem plugins
         run: |
-          cd android
+          cd /home/marcosmodesto/ambiente/react-native/apptailwind/actions-runner/_work/apptailwind/apptailwind
           bundle install
       - name: Run fastlane
         run: |
-          cd android
+          cd /home/marcosmodesto/ambiente/react-native/apptailwind/actions-runner/_work/apptailwind/apptailwind
           bundle exec fastlane build_qa
