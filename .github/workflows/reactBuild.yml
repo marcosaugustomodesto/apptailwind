@@ -2,6 +2,7 @@ on:
   push:
     branches: [ "dev" ]
 jobs:
+  #TODO: AJUSTAR PARA IOS
   #ios-build:
     #name: iOS Dev Build
     #runs-on: self-hosted
