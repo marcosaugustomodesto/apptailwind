@@ -61,7 +61,7 @@ jobs:
 
       - name: Replace fonts.gradle
         run: |
-          cp /home/marcosmodesto/ambiente/react-native/apptailwind/actions-runner/_work/apptailwind/apptailwind/fonts.gradle /home/marcosmodesto/ambiente/react-native/apptailwind/actions-runner/_work/apptailwind/apptailwind/node_modules/react-native-vector-icons/fonts.gradle
+          cp /home/runner/work/apptailwind/apptailwind/fonts.gradle /home/runner/work/apptailwind/apptailwind/node_modules/react-native-vector-icons/fonts.gradle
       
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3.1.0
@@ -77,12 +77,12 @@ jobs:
         uses: gradle/gradle-build-action@v3.1.0
       - name: Execute Gradle build
         run: |
-          cd /home/marcosmodesto/ambiente/react-native/apptailwind/actions-runner/_work/apptailwind/apptailwind/android
+          cd /home/runner/work/apptailwind/apptailwind/android
           dos2unix gradlew
           ./gradlew build
       - name: Build Android JS Bundle
         run: |
-          cd /home/marcosmodesto/ambiente/react-native/apptailwind/actions-runner/_work/apptailwind/apptailwind/android
+          cd /home/runner/work/apptailwind/apptailwind/android
           ./gradlew bundleRelease
       #    yarn run package-android
       # Adjust package.json the command (rm -rf ./pictures) according to your project's requirements.
@@ -98,13 +98,13 @@ jobs:
       # run: yarn run delete-pics
       - name: Install bundler
         run: |
-          cd /home/marcosmodesto/ambiente/react-native/apptailwind/actions-runner/_work/apptailwind/apptailwind/android
+          cd /home/runner/work/apptailwind/apptailwind/android
           gem install bundler
       - name: Install gem plugins
         run: |
-          cd /home/marcosmodesto/ambiente/react-native/apptailwind/actions-runner/_work/apptailwind/apptailwind/android
+          cd /home/runner/work/apptailwind/apptailwind/android
           bundle install
       - name: Run fastlane
         run: |
-          cd /home/marcosmodesto/ambiente/react-native/apptailwind/actions-runner/_work/apptailwind/apptailwind/android
+          cd /home/runner/work/apptailwind/apptailwind/android
           bundle exec fastlane build

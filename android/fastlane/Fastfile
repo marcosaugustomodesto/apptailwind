@@ -4,7 +4,7 @@ require 'fastlane/plugin/versioning'
 # Your lane definition
 lane :build do
   # Increment version code using the custom function defined in build.gradle
-  sh "/home/marcosmodesto/ambiente/react-native/apptailwind/actions-runner/_work/apptailwind/apptailwind/android/gradlew -p /home/marcosmodesto/ambiente/react-native/apptailwind/actions-runner/_work/apptailwind/apptailwind/android app:incrementVersionCode"
+  sh "/home/runner/work/apptailwind/apptailwind/android/gradlew -p /home/runner/work/apptailwind/apptailwind/android app:incrementVersionCode"
 
   gradle(
     task: "assemble",
@@ -15,7 +15,7 @@ lane :build do
     owner_name: "marcosaugustomodesto15-gmail.com",
     owner_type: "user",
     app_name: "apptailwind",
-    file: "/home/marcosmodesto/ambiente/react-native/apptailwind/actions-runner/_work/apptailwind/apptailwind/android/app/build/outputs/bundle/release/app-release.aab",
+    file: "/home/runner/work/apptailwind/apptailwind/android/app/build/outputs/bundle/release/app-release.aab",
     destination_type: 'store',
     notify_testers: true
   )
@@ -24,7 +24,7 @@ lane :build do
     owner_name: "marcosaugustomodesto15-gmail.com",
     owner_type: "user",
     app_name: "apptailwind",
-    file: "/home/marcosmodesto/ambiente/react-native/apptailwind/actions-runner/_work/apptailwind/apptailwind/android/app/build/outputs/apk/release/app-release.apk",
+    file: "/home/runner/work/apptailwind/apptailwind/android/app/build/outputs/apk/release/app-release.apk",
     notify_testers: true
   )
 end
