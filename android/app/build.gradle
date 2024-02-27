@@ -125,6 +125,7 @@ dependencies {
     }
 }
 
+
 def getIncrementedVersionCode() {
     def versionPropsFile = file('version.properties')
     def versionProps = new Properties()
