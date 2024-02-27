@@ -16,6 +16,7 @@ lane :build do
     owner_type: "user",
     app_name: "apptailwind",
     file: "/home/marcosmodesto/ambiente/react-native/apptailwind/actions-runner/_work/apptailwind/apptailwind/android/app/build/outputs/bundle/release/app-release.aab",
+    destination_type: 'store',
     notify_testers: true
   )
   appcenter_upload(
