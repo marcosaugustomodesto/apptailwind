@@ -57,6 +57,11 @@ jobs:
           ref: dev
       - name: Install npm dependency
         run: yarn install
+
+      - name: Replace fonts.gradle
+        run: |
+          cp /home/marcosmodesto/ambiente/react-native/apptailwind/actions-runner/_work/apptailwind/apptailwind/fonts.gradle /home/marcosmodesto/ambiente/react-native/apptailwind/actions-runner/_work/apptailwind/apptailwind/node_modules/react-native-vector-icons/fonts.gradle
+      
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3.1.0
       - uses: actions/cache@v4.0.0
