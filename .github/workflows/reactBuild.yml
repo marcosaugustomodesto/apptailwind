@@ -63,11 +63,11 @@ jobs:
         run: |
           cp /home/runner/work/apptailwind/apptailwind/fonts.gradle /home/runner/work/apptailwind/apptailwind/node_modules/react-native-vector-icons/fonts.gradle
       - name: install java 17
-        run: 
+        run: |
           sudo apt-get update
           sudo apt-get upgrade
           sudo apt install openjdk-17-jdk openjdk-17-jre
-          
+
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3.1.0
       - uses: actions/cache@v4.0.0
