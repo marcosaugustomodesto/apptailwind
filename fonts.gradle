@@ -11,29 +11,30 @@ afterEvaluate {
     def iconFontsDir = config.iconFontsDir ?: "../../node_modules/react-native-vector-icons/Fonts";
     def iconFontNames = config.iconFontNames ?: [ "*.ttf" ];
 
-    // Check if the task already exists before creating it
-    def fontCopyTask = tasks.findByName("copyReactNativeVectorIconFonts")
-    if (fontCopyTask == null) {
-        fontCopyTask = tasks.create(
-            name: "copyReactNativeVectorIconFonts",
-            type: Copy) {
-            description = "copy vector icon fonts."
-            into "$buildDir/intermediates/ReactNativeVectorIcons/fonts"
+    def fontCopyTask = tasks.create(
+        name: "copyReactNativeVectorIconFonts",
+        type: Copy) {
+        description = "copy vector icon fonts."
+        into "$buildDir/intermediates/ReactNativeVectorIcons/fonts"
 
-            iconFontNames.each { fontName ->
-                from(iconFontsDir) {
-                    include(fontName)
-                }
+        iconFontNames.each { fontName ->
+            from(iconFontsDir) {
+                include(fontName)
             }
         }
     }
 
-    android.applicationVariants.all { variant ->
+    android.applicationVariants.all { def variant ->
         def targetName = variant.name.capitalize()
-        def generateAssetsTask = tasks.findByName("generate${targetName}Assets")
-        // Ensure the task exists before trying to access it
-        if (generateAssetsTask != null) {
-            generateAssetsTask.dependsOn(fontCopyTask)
+        def lintVitalAnalyzeTask = tasks.findByName("lintVitalAnalyze${targetName}")
+      
+        def lintAnalyzeTask = tasks.findByName("lintAnalyze${targetName}")
+            lintAnalyzeTask?.dependsOn(copyReactNativeVectorIconFonts)
+        if (lintVitalAnalyzeTask) {
+        lintVitalAnalyzeTask.dependsOn(fontCopyTask)
         }
-    }
+      
+        def generateAssetsTask = tasks.findByName("generate${targetName}Assets")
+        generateAssetsTask.dependsOn(fontCopyTask)
+      }
 }
