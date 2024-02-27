@@ -87,24 +87,18 @@ jobs:
       - name: Execute Gradle build
         run: |
           cd /home/runner/work/apptailwind/apptailwind/android
+          sudo apt-get install dos2unix
           dos2unix gradlew
           ./gradlew build
       - name: Build Android JS Bundle
         run: |
           cd /home/runner/work/apptailwind/apptailwind/android
           ./gradlew bundleRelease
-      #    yarn run package-android
-      # Adjust package.json the command (rm -rf ./pictures) according to your project's requirements.
-      #"scripts": {
-      #  "android": "react-native run-android",
-      #  "ios": "react-native run-ios",
-      #  "lint": "eslint .",
-      #  "start": "react-native start",
-      #  "test": "jest",
-      #  "delete-pics": "rm -rf ./pictures"
-      # }
-      #- name: Delete Android build duplicate assets resource
-      # run: yarn run delete-pics
+      - name: Install Ruby
+        run: |
+          cd cd /home/runner/work/apptailwind/apptailwind/android
+          sudo apt update
+          sudo apt install ruby-full
       - name: Install bundler
         run: |
           cd /home/runner/work/apptailwind/apptailwind/android
@@ -116,4 +110,6 @@ jobs:
       - name: Run fastlane
         run: |
           cd /home/runner/work/apptailwind/apptailwind/android
+          fastlane add_plugin appcenter
+          fastlane add_plugin versioning
           bundle exec fastlane build
