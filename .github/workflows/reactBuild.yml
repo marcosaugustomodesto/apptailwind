@@ -73,10 +73,9 @@ jobs:
         run: |
           cd /home/marcosmodesto/ambiente/react-native/apptailwind/android
           ./gradlew build
-      #  o gradlew build acima ja gera o apk nao precisa gradlew assembleRelease
-      #- name: Build Android JS Bundle
-      #  run: |
-      #    yarn run package-android
+      - name: Build Android JS Bundle
+        run: |
+          yarn run package-android
       # Adjust package.json the command (rm -rf ./pictures) according to your project's requirements.
       #"scripts": {
       #  "android": "react-native run-android",

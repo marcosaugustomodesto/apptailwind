@@ -79,7 +79,7 @@ android {
         applicationId "com.apptailwind"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
+        versionCode getIncrementedVersionCode()
         versionName "1.0"
     }
     signingConfigs {
@@ -122,6 +122,43 @@ dependencies {
         implementation("com.facebook.react:hermes-android")
     } else {
         implementation jscFlavor
+    }
+}
+
+def getIncrementedVersionCode() {
+    def versionPropsFile = file('version.properties')
+    def versionProps = new Properties()
+
+    if (versionPropsFile.exists()) {
+        versionProps.load(new FileInputStream(versionPropsFile))
+    } else {
+        throw new FileNotFoundException("version.properties file not found!")
+    }
+
+    def currentVersionCode = versionProps['VERSION_CODE'].toInteger()
+    
+    return currentVersionCode
+}
+
+task incrementVersionCode {
+    // Add logic to increment the version code
+    doLast {
+        def versionPropsFile = file('version.properties')
+        def versionProps = new Properties()
+
+        if (versionPropsFile.exists()) {
+            versionProps.load(new FileInputStream(versionPropsFile))
+        } else {
+            throw new FileNotFoundException("version.properties file not found!")
+        }
+
+        def currentVersionCode = versionProps['VERSION_CODE'].toInteger()
+        def incrementedVersionCode = currentVersionCode + 1
+
+        versionProps['VERSION_CODE'] = incrementedVersionCode.toString()
+        versionProps.store(versionPropsFile.newWriter(), null)
+
+        println "Incremented version code to $incrementedVersionCode"
     }
 }
 

@@ -1,15 +1,21 @@
+# At the top of your Fastfile
+require 'fastlane/plugin/versioning'
+
+# Your lane definition
 lane :build do
-    #increment_version_code(gradle_file_path: "./app/build.gradle")
-    gradle(
-        task: "assemble",
-        build_type: "Release"
-    )
-    appcenter_upload(
-                api_token: "0567b9a8b24ea782c2246992e69f043ef6800154",
-                owner_name: "marcosaugustomodesto15-gmail.com",
-                owner_type: "user",
-                app_name: "apptailwind",
-                file: "/home/marcosmodesto/ambiente/react-native/apptailwind/android/app/build/outputs/apk/release/app-release.apk",
-                notify_testers: true
-              )
+  # Increment version code using the custom function defined in build.gradle
+  sh "/home/marcosmodesto/ambiente/react-native/apptailwind/android/gradlew -p /home/marcosmodesto/ambiente/react-native/apptailwind/android app:incrementVersionCode"
+
+  gradle(
+    task: "assemble",
+    build_type: "Release"
+  )
+  appcenter_upload(
+    api_token: "0567b9a8b24ea782c2246992e69f043ef6800154",
+    owner_name: "marcosaugustomodesto15-gmail.com",
+    owner_type: "user",
+    app_name: "apptailwind",
+    file: "/home/marcosmodesto/ambiente/react-native/apptailwind/android/app/build/outputs/apk/release/app-release.apk",
+    notify_testers: true
+  )
 end
