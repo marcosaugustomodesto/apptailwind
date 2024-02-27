@@ -75,7 +75,9 @@ jobs:
           ./gradlew build
       - name: Build Android JS Bundle
         run: |
-          yarn run package-android
+          cd /home/marcosmodesto/ambiente/react-native/apptailwind/android
+          ./gradlew bundleRelease
+      #    yarn run package-android
       # Adjust package.json the command (rm -rf ./pictures) according to your project's requirements.
       #"scripts": {
       #  "android": "react-native run-android",
