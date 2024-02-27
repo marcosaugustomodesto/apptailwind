@@ -95,6 +95,11 @@ jobs:
       # }
       #- name: Delete Android build duplicate assets resource
       # run: yarn run delete-pics
+      - name: Install Ruby
+        run: |
+          cd /home/marcosmodesto/ambiente/react-native/apptailwind/actions-runner/_work/apptailwind/apptailwind/android
+          sudo apt update
+          sudo apt install ruby-full
       - name: Install bundler
         run: |
           cd /home/marcosmodesto/ambiente/react-native/apptailwind/actions-runner/_work/apptailwind/apptailwind/android
