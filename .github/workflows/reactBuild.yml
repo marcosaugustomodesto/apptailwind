@@ -96,7 +96,7 @@ jobs:
           ./gradlew bundleRelease
       - name: Install Ruby
         run: |
-          cd cd /home/runner/work/apptailwind/apptailwind/android
+          cd /home/runner/work/apptailwind/apptailwind/android
           sudo apt update
           sudo apt install ruby-full
       - name: Install bundler
