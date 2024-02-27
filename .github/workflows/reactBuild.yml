@@ -102,14 +102,14 @@ jobs:
       - name: Install bundler
         run: |
           cd /home/runner/work/apptailwind/apptailwind/android
-          gem install bundler
+          sudo gem install bundler
       - name: Install gem plugins
         run: |
           cd /home/runner/work/apptailwind/apptailwind/android
-          bundle install
+          sudo bundle install
       - name: Run fastlane
         run: |
           cd /home/runner/work/apptailwind/apptailwind/android
-          fastlane add_plugin appcenter
-          fastlane add_plugin versioning
-          bundle exec fastlane build
+          sudo fastlane add_plugin appcenter
+          sudo fastlane add_plugin versioning
+          sudo bundle exec fastlane build
